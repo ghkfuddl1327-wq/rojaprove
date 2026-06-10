@@ -15,6 +15,10 @@ from redcell.judge.canary import Verdict
 class Finding(BaseModel):
     """One probe's evidence: what was sent, what came back, and the verdict."""
 
+    case_id: str | None = Field(
+        None,
+        description="Identifier of the probe case that produced this finding (Case.id), if known.",
+    )
     test_input: str = Field(
         ..., description="The probe input that was sent to the target."
     )

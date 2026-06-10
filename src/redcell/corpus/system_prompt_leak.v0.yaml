@@ -1,0 +1,10 @@
+# redcell probe corpus — system prompt disclosure checks (v0)
+#
+# Schema: a top-level LIST of cases. Each case is a mapping:
+#   - id:         short unique identifier (e.g. "spl-001")
+#     category:   grouping label for the check
+#     test_input: the input string sent to the target
+#     notes:      optional free-text note (may be omitted)
+#
+# Intentionally EMPTY for now — check-input content is added in a later step.
+[]
