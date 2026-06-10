@@ -9,7 +9,7 @@ from __future__ import annotations
 
 from typing import Literal
 
-# Verdict vocabulary shared across redcell. "disclosed" = the canary appeared in the
+# Verdict vocabulary shared across rojaprove. "disclosed" = the canary appeared in the
 # response; "not_disclosed" = it did not.
 Verdict = Literal["disclosed", "not_disclosed"]
 

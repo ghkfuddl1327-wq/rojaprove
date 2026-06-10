@@ -1,4 +1,4 @@
-"""Evidence model for redcell findings.
+"""Evidence model for rojaprove findings.
 
 A ``Finding`` is the per-probe evidence record: the input that was sent, the raw response
 captured from the target, the deterministic verdict, and the turn count at which it
@@ -9,7 +9,7 @@ from __future__ import annotations
 
 from pydantic import BaseModel, Field
 
-from redcell.judge.canary import Verdict
+from rojaprove.judge.canary import Verdict
 
 
 class Finding(BaseModel):

@@ -1,4 +1,4 @@
-"""redcell configuration: bring-your-own-key (BYOK) loading, secret masking, and
+"""rojaprove configuration: bring-your-own-key (BYOK) loading, secret masking, and
 transport disclosure (what leaves this machine during a scan).
 
 No secrets are persisted. Auth tokens are read from the environment at runtime and are
@@ -13,11 +13,11 @@ from urllib.parse import urlsplit
 
 # Default canary token the judge searches for. MUST match the demo target's CANARY in
 # examples/demo_target/app.py (kept in sync manually; a unit test will guard this).
-CANARY_DEFAULT = "RC-CANARY-7Q2X-9F4K-DEMO"
+CANARY_DEFAULT = "RP-CANARY-7Q2X-9F4K-DEMO"
 
 # Environment variable names for BYOK auth against a target you own or are authorized to test.
-ENV_AUTH_BEARER = "REDCELL_AUTH_BEARER"
-ENV_TARGET_API_KEY = "REDCELL_TARGET_API_KEY"
+ENV_AUTH_BEARER = "ROJAPROVE_AUTH_BEARER"
+ENV_TARGET_API_KEY = "ROJAPROVE_TARGET_API_KEY"
 
 # Local hostnames that don't warrant a cleartext-transport warning.
 _LOCAL_HOSTS = {"127.0.0.1", "localhost", "::1"}
@@ -42,7 +42,7 @@ def resolve_auth_token(
 ) -> str | None:
     """Load the bearer token to send to the target (BYOK), by precedence:
 
-    explicit CLI value > REDCELL_AUTH_BEARER > REDCELL_TARGET_API_KEY > None.
+    explicit CLI value > ROJAPROVE_AUTH_BEARER > ROJAPROVE_TARGET_API_KEY > None.
     """
     env = os.environ if env is None else env
     if cli_bearer:

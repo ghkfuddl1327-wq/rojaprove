@@ -12,10 +12,10 @@ from pathlib import Path
 
 import pytest
 
-from redcell.config import CANARY_DEFAULT
-from redcell.judge.canary import contains_canary, judge
-from redcell.report import fix_prompt
-from redcell.report.findings import Finding
+from rojaprove.config import CANARY_DEFAULT
+from rojaprove.judge.canary import contains_canary, judge
+from rojaprove.report import fix_prompt
+from rojaprove.report.findings import Finding
 
 # The demo target lives outside the installed package (examples/), so make the repo root
 # importable regardless of how pytest is launched.

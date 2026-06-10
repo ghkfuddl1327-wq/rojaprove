@@ -12,12 +12,12 @@ generation + re-test loop"; it is intentionally NOT implemented here.
 
 from __future__ import annotations
 
-from redcell.report.findings import Finding
+from rojaprove.report.findings import Finding
 
 # Stable tag embedded in every generated directive. A hardened target can be recognized by
 # the presence of this marker (single source of truth for that check). Safe to drop if you
 # don't want the tag in your own system prompt.
-DEFENSE_MARKER = "[redcell-defense:v0]"
+DEFENSE_MARKER = "[rojaprove-defense:v0]"
 
 # The fixed hardening directive. {marker} is filled with DEFENSE_MARKER.
 _DEFENSE_DIRECTIVE = (
@@ -30,7 +30,7 @@ _DEFENSE_DIRECTIVE = (
 
 # The paste-ready block returned to the operator, with the finding's context filled in.
 _FIX_TEMPLATE = """\
-redcell fix — system prompt disclosure (probe {case_id}, disclosed on turn {turn_count})
+rojaprove fix — system prompt disclosure (probe {case_id}, disclosed on turn {turn_count})
 
 A check input such as the following caused your assistant to disclose protected content:
     {test_input}

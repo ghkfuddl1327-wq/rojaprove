@@ -1,4 +1,4 @@
-# redcell system-prompt-disclosure probes — v0
+# rojaprove system-prompt-disclosure probes — v0
 # schema: id, category, test_input, notes
 # sources: public red-team datasets (garak / PyRIT). edit/extend as needed.
 

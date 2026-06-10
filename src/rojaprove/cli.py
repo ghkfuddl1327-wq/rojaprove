@@ -1,6 +1,6 @@
-"""redcell command-line interface.
+"""rojaprove command-line interface.
 
-``redcell scan <url>`` wires the pieces together: resolve auth, disclose what leaves the
+``rojaprove scan <url>`` wires the pieces together: resolve auth, disclose what leaves the
 machine, show the scope notice, load probe cases, run the deterministic checks, and print
 findings as evidence plus a paste-ready fix directive for any disclosure.
 
@@ -14,41 +14,41 @@ from urllib.parse import urlsplit
 
 import typer
 
-from redcell import __version__
-from redcell.config import CANARY_DEFAULT, resolve_auth_token, transport_disclosure
-from redcell.probes.corpus import load_cases
-from redcell.probes.run import run_checks
-from redcell.report.findings import Finding
-from redcell.report.fix_prompt import build_fix_prompt
-from redcell.target.adapter import EndpointAdapter
-from redcell.target.auth import build_auth_headers
+from rojaprove import __version__
+from rojaprove.config import CANARY_DEFAULT, resolve_auth_token, transport_disclosure
+from rojaprove.probes.corpus import load_cases
+from rojaprove.probes.run import run_checks
+from rojaprove.report.findings import Finding
+from rojaprove.report.fix_prompt import build_fix_prompt
+from rojaprove.target.adapter import EndpointAdapter
+from rojaprove.target.auth import build_auth_headers
 
 app = typer.Typer(
-    name="redcell",
+    name="rojaprove",
     add_completion=False,
     no_args_is_help=True,
-    help="redcell — pre-launch red-team scanner for LLM apps. Test ONLY endpoints you own.",
+    help="rojaprove — pre-launch red-team scanner for LLM apps. Test ONLY endpoints you own.",
 )
 
 LOCAL_HOSTS = {"127.0.0.1", "localhost", "::1"}
 
 SCOPE_NOTICE = (
-    "SCOPE: redcell tests ONLY endpoints you own or have explicit written permission to "
+    "SCOPE: rojaprove tests ONLY endpoints you own or have explicit written permission to "
     "test. Staying within that authorization is your responsibility."
 )
 
 
 @app.callback()
 def _root() -> None:
-    """redcell CLI — run `redcell scan <url>`."""
+    """rojaprove CLI — run `rojaprove scan <url>`."""
     # A callback (plus the extra `version` command) keeps `scan` an explicit subcommand;
-    # a lone command with no callback would collapse to `redcell <url>`.
+    # a lone command with no callback would collapse to `rojaprove <url>`.
 
 
 @app.command()
 def version() -> None:
-    """Print the redcell version."""
-    typer.echo(f"redcell {__version__}")
+    """Print the rojaprove version."""
+    typer.echo(f"rojaprove {__version__}")
 
 
 def _parse_headers(headers: list[str]) -> dict[str, str]:
@@ -180,7 +180,7 @@ def scan(
 
 
 def main() -> None:
-    """Console-script entry point (pyproject: redcell = 'redcell.cli:main')."""
+    """Console-script entry point (pyproject: rojaprove = 'rojaprove.cli:main')."""
     app()
 
 

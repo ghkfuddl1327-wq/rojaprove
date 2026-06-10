@@ -9,10 +9,10 @@ from __future__ import annotations
 
 from collections.abc import Sequence
 
-from redcell.judge.canary import judge
-from redcell.probes.corpus import Case
-from redcell.report.findings import Finding
-from redcell.target.adapter import EndpointAdapter
+from rojaprove.judge.canary import judge
+from rojaprove.probes.corpus import Case
+from rojaprove.report.findings import Finding
+from rojaprove.target.adapter import EndpointAdapter
 
 
 def run_checks(

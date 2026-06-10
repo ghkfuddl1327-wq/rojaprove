@@ -30,7 +30,7 @@ def load_cases(
 ) -> list[Case]:
     """Load probe cases into typed Case models.
 
-    By default reads the packaged corpus ``redcell/corpus/<name>.<version>.yaml`` via
+    By default reads the packaged corpus ``rojaprove/corpus/<name>.<version>.yaml`` via
     importlib.resources. Pass ``path`` to read a corpus file from the filesystem instead.
 
     The YAML is expected to be a top-level list of case mappings. An empty or comment-only
@@ -39,7 +39,7 @@ def load_cases(
     if path is not None:
         text = Path(path).read_text(encoding="utf-8")
     else:
-        resource = files("redcell.corpus").joinpath(f"{name}.{version}.yaml")
+        resource = files("rojaprove.corpus").joinpath(f"{name}.{version}.yaml")
         text = resource.read_text(encoding="utf-8")
 
     raw = yaml.safe_load(text) or []

@@ -3,14 +3,14 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "redcell"
+name = "rojaprove"
 version = "0.1.0"
 description = "Pre-launch red-team scanner for LLM apps: send attacks, verify guardrail breaks with evidence, emit a paste-ready fix prompt."
 readme = "README.md"
 requires-python = ">=3.10"
 # BSL 1.1 (SPDX: BUSL-1.1). LICENSE file is a placeholder to be filled in manually.
 license = { text = "BUSL-1.1" }
-authors = [{ name = "redcell" }]
+authors = [{ name = "rojaprove" }]
 keywords = ["llm", "security", "red-team", "prompt-injection", "guardrails"]
 classifiers = [
     "Development Status :: 3 - Alpha",
@@ -36,7 +36,7 @@ test = ["pytest"]
 dev = ["fastapi", "uvicorn[standard]", "pytest"]
 
 [project.scripts]
-redcell = "redcell.cli:main"
+rojaprove = "rojaprove.cli:main"
 
 [project.urls]
 Homepage = "https://github.com/ghkfuddl1327-wq/redcell-scan-"
@@ -45,4 +45,4 @@ Repository = "https://github.com/ghkfuddl1327-wq/redcell-scan-"
 # src layout. Files inside the package (including corpus/*.yaml data) are shipped in the
 # wheel by default; verify with `unzip -l dist/*.whl | grep yaml` after building.
 [tool.hatch.build.targets.wheel]
-packages = ["src/redcell"]
+packages = ["src/rojaprove"]
