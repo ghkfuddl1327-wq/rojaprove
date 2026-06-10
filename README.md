@@ -41,4 +41,4 @@ rojaprove tests the **AI layer** — where an LLM mediates the response. v0.1 fo
 
 ## License
 
-BSL 1.1 — full text and licensor pending (see LICENSE).
+Licensed under the Business Source License 1.1 — see [LICENSE](./LICENSE)
