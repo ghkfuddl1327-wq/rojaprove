@@ -37,3 +37,7 @@ htmlcov/
 
 # --- Throwaway / scratch (manual experiments, not part of the package) ---
 scratch/
+*.cast
+*.gif
+auto_type.py
+auto_type.py

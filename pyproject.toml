@@ -39,8 +39,9 @@ dev = ["fastapi", "uvicorn[standard]", "pytest"]
 rojaprove = "rojaprove.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/ghkfuddl1327-wq/redcell-scan-"
-Repository = "https://github.com/ghkfuddl1327-wq/redcell-scan-"
+Homepage = "https://github.com/ghkfuddl1327-wq/rojaprove"
+Repository = "https://github.com/ghkfuddl1327-wq/rojaprove"
+Issues = "https://github.com/ghkfuddl1327-wq/rojaprove/issues"
 
 # src layout. Files inside the package (including corpus/*.yaml data) are shipped in the
 # wheel by default; verify with `unzip -l dist/*.whl | grep yaml` after building.
