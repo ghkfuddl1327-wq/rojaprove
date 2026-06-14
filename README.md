@@ -4,6 +4,8 @@
 
 Not guesses, evidence. Every finding carries the exact input sent, the raw response received, and a deterministic verdict. No finding without proof.
 
+![rojaprove finding a system-prompt leak in a live endpoint — red verdict with evidence](demos/rojaprove-inbox-evidence.gif)
+
 ## Scope — read this first
 
 rojaprove tests **only** endpoints you own or have explicit written permission to test. Staying within that authorization is your responsibility. The tool always prints a scope notice; `--i-own-this` records your authorization in the output. This is a defensive pre-launch check, not a tool for attacking systems you don't control.
