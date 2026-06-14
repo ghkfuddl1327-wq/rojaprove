@@ -42,3 +42,4 @@ scratch/
 auto_type.py
 auto_type.py
 *.bundle
+demos/*.mp4
