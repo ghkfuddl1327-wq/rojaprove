@@ -59,10 +59,10 @@ def test_judge_maps_to_verdicts():
 
 def test_canary_default_matches_demo():
     pytest.importorskip("fastapi", reason="demo extra (FastAPI) needed to import demo CANARY")
-    from examples.demo_target.app import CANARY as DEMO_CANARY
+    from targets.inbox_assistant.app import CANARY as DEMO_CANARY
 
     assert CANARY_DEFAULT == DEMO_CANARY, (
-        "config.CANARY_DEFAULT and examples/demo_target/app.py CANARY have drifted — "
+        "config.CANARY_DEFAULT and targets/inbox_assistant/app.py CANARY have drifted — "
         "keep them in sync."
     )
 

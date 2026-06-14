@@ -76,7 +76,7 @@ harness behave before pointing it at anything of your own. It's a small FastAPI
 pip install -e ".[demo]"
 
 # 2. run the vulnerable target (leave this running in one terminal)
-uvicorn examples.demo_target.app:app --host 127.0.0.1 --port 8000
+uvicorn targets.inbox_assistant.app:app --host 127.0.0.1 --port 8000
 
 # 3. in a second terminal, scan it
 rojaprove scan http://127.0.0.1:8000/chat --i-own-this

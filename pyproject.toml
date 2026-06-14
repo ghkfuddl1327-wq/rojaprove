@@ -30,7 +30,7 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-# The demo target (examples/demo_target) needs a web server; kept out of core deps.
+# The demo target (targets/inbox_assistant) needs a web server; kept out of core deps.
 demo = ["fastapi", "uvicorn[standard]"]
 test = ["pytest"]
 dev = ["fastapi", "uvicorn[standard]", "pytest"]

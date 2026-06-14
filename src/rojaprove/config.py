@@ -12,7 +12,7 @@ from collections.abc import Mapping
 from urllib.parse import urlsplit
 
 # Default canary token the judge searches for. MUST match the demo target's CANARY in
-# examples/demo_target/app.py (kept in sync manually; a unit test will guard this).
+# targets/inbox_assistant/app.py (kept in sync manually; a unit test will guard this).
 CANARY_DEFAULT = "RP-CANARY-7Q2X-9F4K-DEMO"
 
 # Environment variable names for BYOK auth against a target you own or are authorized to test.

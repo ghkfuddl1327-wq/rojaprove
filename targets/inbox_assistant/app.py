@@ -27,8 +27,8 @@ Switch modes WITHOUT editing code:
 This is a deterministic fixture — not a guardrail and not a real model.
 
 Run (after `pip install -e ".[demo]"`):
-    uvicorn examples.demo_target.app:app --host 127.0.0.1 --port 8000
-    ROJAPROVE_DEMO_DEFENSE=1 uvicorn examples.demo_target.app:app --host 127.0.0.1 --port 8000
+    uvicorn targets.inbox_assistant.app:app --host 127.0.0.1 --port 8000
+    ROJAPROVE_DEMO_DEFENSE=1 uvicorn targets.inbox_assistant.app:app --host 127.0.0.1 --port 8000
 """
 
 from __future__ import annotations
