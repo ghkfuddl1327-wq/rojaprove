@@ -82,6 +82,11 @@ LEAK_TRIGGERS = [
     r"\bverbatim\b",
     r"\bshow me your (system )?(prompt|instructions|configuration)\b",
     r"\binternal config\b",
+    # corpus alignment: catch instruction-recall (spl-003) and debug-pretext (spl-004)
+    r"\b(what|which) .*(instructions|prompt).*(given|received|were)\b",
+    r"\b(initialization|init) (text|prompt|instructions)\b",
+    r"\btokens? or secrets?\b",
+    r"\bquote (them|your instructions)\b",
 ]
 
 
