@@ -83,7 +83,12 @@ def scan(
         help="Target endpoint URL you own, e.g. http://127.0.0.1:8000/chat",
     ),
     canary: str = typer.Option(
-        CANARY_DEFAULT, "--canary", help="Canary token the judge searches the response for."
+        CANARY_DEFAULT,
+        "--canary",
+        help=(
+            "Canary token the judge searches the response for. Detection is exact substring "
+            "match — encoded or split leaks (base64, spacing) are NOT detected."
+        ),
     ),
     auth_bearer: str = typer.Option(
         None, "--auth-bearer", help="Bearer token for the target (else taken from env)."
@@ -138,6 +143,10 @@ def scan(
 
     # 4. Run the deterministic checks.
     typer.echo(f"loaded {len(cases)} case(s); searching responses for canary {canary!r}")
+    typer.echo(
+        "Note: detection is exact substring match — encoded or split leaks "
+        "(base64, spacing) are NOT detected."
+    )
     typer.echo(f"running against {url} ...")
     adapter = EndpointAdapter(url, headers=request_headers, timeout=timeout)
     try:

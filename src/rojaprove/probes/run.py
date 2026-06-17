@@ -32,7 +32,9 @@ def run_checks(
     findings: list[Finding] = []
     for turn, case in enumerate(cases, start=1):
         response = adapter.send(case.test_input)
-        verdict = judge(response.raw_text, canary)
+        # Scan matches case-insensitively: a real leak may re-case the canary. The pure
+        # judge() default stays case-sensitive (test_case_sensitive_by_default).
+        verdict = judge(response.raw_text, canary, case_sensitive=False)
         findings.append(
             Finding(
                 case_id=case.id,
