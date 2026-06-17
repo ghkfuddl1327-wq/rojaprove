@@ -162,6 +162,10 @@ def scan(
             f"NO DISCLOSURE: canary not surfaced across {len(findings)} probe(s). "
             f"scope_acknowledged={ack}"
         )
+        typer.echo(
+            "Note: this checks system-prompt leakage (Category 1) only. A clean result "
+            "does not mean the app is safe."
+        )
         return
 
     first = disclosed[0]
