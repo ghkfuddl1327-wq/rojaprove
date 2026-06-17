@@ -96,8 +96,8 @@ signal.
 
 > Want to see the same Category (1) mechanism in a different form factor?
 > [`targets/doc-summarizer/`](targets/doc-summarizer/) is a second reference
-> target — a document-summarizer instead of an email assistant — showing the
-> canary approach is form-factor independent. It's there to read and learn from.
+> target — a document-summarizer instead of an email assistant — showing the canary mechanism is form-factor independent — though the probe wording
+> isn't: the same probes that fired on the email target initially missed leaks here, so the trigger patterns were widened to cover both. It's there as a worst-case fixture to read and learn from.
 
 ---
 
